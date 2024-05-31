@@ -27,7 +27,7 @@ public class Monstre {
         }
     }
 
-    public static coid initMonstres(int[][] monstres, int[][] monde) {
+    public static void initMonstres(int[][] monstres, int[][] monde) {
         int vampires = 10;
 
         while (vampires > 0) {
