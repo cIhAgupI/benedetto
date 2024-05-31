@@ -4,12 +4,6 @@ public class Monstre {
 
     }
 
-    /*
-     * Initialisation du monde avec comme choix 1 pour les arbres et 2 pour les
-     * batteries. Le code considère également qu'une case inoccupée contient un 0.
-     * Adapter les nombres en fonction des attendus
-     */
-
     public static void initMonde(int[][] monde) {
         int arbres = 20;
         int batteries = 10;
@@ -27,17 +21,11 @@ public class Monstre {
             int ligne = (int) (Math.random() * monde.length);
             int colonne = (int) (Math.random() * monde[ligne].length);
             if (monde[ligne][colonne] == 0) {
-                monde[ligne][colonne] = 2;
+                monde[ligne][colonne] = 3;
                 batteries--;
             }
         }
     }
-
-    /*
-     * Initialisation des monstres avec comme choix 3 pour les vampires. Le code
-     * considère également qu'une case inoccupée contient un 0.
-     * Adapter les nombres en fonction des attendus
-     */
 
     public static coid initMonstres(int[][] monstres, int[][] monde) {
         int vampires = 10;
@@ -46,7 +34,7 @@ public class Monstre {
             int ligne = (int) (Math.random() * monde.length);
             int colonne = (int) (Math.random() * monde[ligne].length);
             if (monde[ligne][colonne] == 0) {
-                monde[ligne][colonne] = 3;
+                monde[ligne][colonne] = 2;
                 vampires--;
                 monstres[vampires][0] = ligne;
                 monstres[vampires][1] = colonne;
@@ -54,5 +42,20 @@ public class Monstre {
         }
     }
 
-    
-}
+    public static void afficheMonde(int ligne, int col, int puissance, boolean triche) {
+        // A implémenter
+    }
+
+    public static void afficheCase(int numero) {
+        switch (numero) {
+            case 1:
+                System.out.print('P');
+                break;
+            case 2:
+                System.out.print('W');
+                break;
+            case 3:
+                System.out.print('z');
+                break;
+        }
+    }
